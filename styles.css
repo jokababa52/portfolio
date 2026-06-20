@@ -663,6 +663,187 @@ section {
 }
 
 /* ===========================
+   Track Record / Results Section
+   =========================== */
+
+.results {
+    background-color: var(--color-surface);
+}
+
+.results-intro {
+    max-width: var(--reading-width);
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.track-table-wrap {
+    overflow-x: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+    margin-bottom: var(--spacing-md);
+}
+
+.track-table-wrap.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.track-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.track-table th,
+.track-table td {
+    padding: 1rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.track-table thead th {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.track-th-sub {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--color-text-muted);
+    margin-top: 0.15rem;
+}
+
+.track-metric {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.track-table tbody td:nth-child(2),
+.track-table tbody td:nth-child(3) {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.track-trend {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.track-trend.up {
+    color: #6B7F4F;
+}
+
+.track-trend.down {
+    color: var(--color-secondary);
+}
+
+.track-trend.flat {
+    color: var(--color-text-muted);
+}
+
+.results-note {
+    max-width: var(--reading-width);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-bottom: var(--spacing-lg);
+}
+
+.sources-compare {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.sources-ytd {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 100px;
+    padding: 0.15rem 0.55rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.sources-panel {
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.sources-panel.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sources-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.source-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 24px;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.source-label {
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+.source-bar-track {
+    height: 6px;
+    background-color: var(--color-border);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.source-bar-fill {
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: 100px;
+}
+
+.source-count {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: right;
+}
+
+.sources-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* ===========================
    Experience Section
    =========================== */
 
@@ -983,6 +1164,14 @@ blockquote {
     
     .case-study-stats {
         gap: var(--spacing-md);
+    }
+    
+    .sources-compare {
+        grid-template-columns: 1fr;
+    }
+    
+    .source-row {
+        grid-template-columns: 90px 1fr 20px;
     }
     
     .expertise-grid {
