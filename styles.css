@@ -364,6 +364,305 @@ section {
 }
 
 /* ===========================
+   Work / Case Study Section
+   =========================== */
+
+.work {
+    background-color: var(--color-background);
+}
+
+.work-content {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+/* --- Email mockup card --- */
+
+.case-study-mockup {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.case-study-mockup.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mockup-frame {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(44, 36, 22, 0.12);
+}
+
+.mockup-topbar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.85rem 1rem;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.mockup-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    flex-shrink: 0;
+}
+
+.mockup-subject {
+    margin-left: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mockup-body {
+    padding: 1.5rem 1.5rem 2rem;
+    max-height: 580px;
+    overflow-y: auto;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.mockup-brand {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1C9BD8;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+}
+
+.mockup-hero {
+    height: 140px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #C9A876 0%, #8B6F4E 55%, #4A3B2A 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.mockup-photo-tag {
+    font-size: 0.7rem;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+}
+
+.mockup-photo-tag.small {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+}
+
+.mockup-headline {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1C9BD8;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+}
+
+.mockup-dek {
+    font-size: 0.85rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.mockup-pullquote {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #4a4a4a;
+    line-height: 1.6;
+    border-left: 2px solid #F2994A;
+    padding-left: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.mockup-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.mockup-trio-item {
+    height: 70px;
+    border-radius: 4px;
+    background: linear-gradient(160deg, #D8C49B, #7C8B6F);
+    display: flex;
+    align-items: flex-end;
+    padding: 0.4rem;
+}
+
+.mockup-trio-item.alt {
+    background: linear-gradient(160deg, #E0B97D, #A66B3F);
+}
+
+.mockup-cta {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 1.5rem;
+    padding: 0.65rem 1.6rem;
+    border: 1.5px solid #2C2416;
+    border-radius: 100px;
+    background: none;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: #2C2416;
+    cursor: default;
+}
+
+.mockup-highlights {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mockup-highlight-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1C9BD8;
+    margin-bottom: 0.25rem;
+}
+
+.mockup-highlight-copy {
+    display: block;
+    font-size: 0.78rem;
+    color: #6a6a6a;
+    line-height: 1.5;
+}
+
+.mockup-footer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: #1C9BD8;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.mockup-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.92));
+    pointer-events: none;
+}
+
+/* --- Case study copy --- */
+
+.case-study-copy {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.case-study-copy.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.case-study-eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.case-study-title {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 0.4rem;
+}
+
+.case-study-role {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.case-study-copy p {
+    margin-bottom: 1.25rem;
+    color: var(--color-text);
+    max-width: var(--reading-width);
+}
+
+.case-study-list {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+    max-width: var(--reading-width);
+}
+
+.case-study-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.85rem;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.case-study-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 1px;
+    background-color: var(--color-accent);
+}
+
+.case-study-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.stat-item {
+    max-width: 220px;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* ===========================
    Experience Section
    =========================== */
 
@@ -668,6 +967,22 @@ blockquote {
     
     .lead-text {
         font-size: 1.5rem;
+    }
+    
+    .work-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .mockup-body {
+        max-height: 420px;
+    }
+    
+    .case-study-title {
+        font-size: 1.85rem;
+    }
+    
+    .case-study-stats {
+        gap: var(--spacing-md);
     }
     
     .expertise-grid {
